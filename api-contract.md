@@ -1,33 +1,35 @@
-API Contract – Smart Team Task Manager
+Smart Team Task Manager - API Contract
 
-1. Resources
+1. Project Overview
 
-The main resources of the project are:
+This project is a Smart Team Task Manager designed to manage tasks and users.
 
-- Tasks: Manage team tasks.
-- Users: Manage system users.
+2. Resources
 
-2. API Endpoints
+The main resources of this project are:
 
-Tasks Resource
+- Tasks
+- Users
 
-Endpoint| Method| Description| Status Code
-/api/tasks| GET| Get all tasks| 200
-/api/tasks/{id}| GET| Get a task by ID| 200
-/api/tasks| POST| Create a new task| 201
-/api/tasks/{id}| PUT| Update a task| 200
-/api/tasks/{id}| DELETE| Delete a task| 204
+3. Tasks API Endpoints
 
-Users Resource
+Method| Endpoint| Description| Status Code
+GET| /api/tasks| Get all tasks| 200 OK
+GET| /api/tasks/{id}| Get a task by ID| 200 OK
+POST| /api/tasks| Create a new task| 201 Created
+PUT| /api/tasks/{id}| Update a task| 200 OK
+DELETE| /api/tasks/{id}| Delete a task| 204 No Content
 
-Endpoint| Method| Description| Status Code
-/api/users| GET| Get all users| 200
-/api/users/{id}| GET| Get a user by ID| 200
-/api/users| POST| Create a new user| 201
-/api/users/{id}| PUT| Update a user| 200
-/api/users/{id}| DELETE| Delete a user| 204
+4. Users API Endpoints
 
-3. Architecture Diagram
+Method| Endpoint| Description| Status Code
+GET| /api/users| Get all users| 200 OK
+GET| /api/users/{id}| Get a user by ID| 200 OK
+POST| /api/users| Create a new user| 201 Created
+PUT| /api/users/{id}| Update a user| 200 OK
+DELETE| /api/users/{id}| Delete a user| 204 No Content
+
+5. Architecture Diagram
 
 flowchart TD
     A[Client] --> B[REST API]
@@ -36,12 +38,14 @@ flowchart TD
     C --> E[(Database)]
     D --> E
 
-4. Architecture Description
+6. Architecture Description
 
-The system uses a REST API architecture.
+- Client sends HTTP requests to the REST API.
+- REST API receives and processes requests.
+- Tasks Service manages task operations.
+- Users Service manages user operations.
+- Both services communicate with the Database.
 
-The client sends HTTP requests to the REST API. The API processes requests related to Tasks and Users and communicates with the database.
+7. Conclusion
 
-The Tasks Service manages task-related operations, while the Users Service manages user-related operations.
-
-This API Contract defines the initial structure of the project.
+This API Contract defines the initial structure of the Smart Team Task Manager backend using REST API principles.

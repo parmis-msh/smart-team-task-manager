@@ -29,24 +29,19 @@ Endpoint| Method| Description| Status Code
 
 3. Architecture Diagram
 
-       Client
-         |
-         v
-      REST API
-         |
-    -------------
-    |           |
-  Tasks       Users
-  Service     Service
-    |           |
-    -------------
-         |
-      Database
+flowchart TD
+    A[Client] --> B[REST API]
+    B --> C[Tasks Service]
+    B --> D[Users Service]
+    C --> E[(Database)]
+    D --> E
 
 4. Architecture Description
 
 The system uses a REST API architecture.
 
 The client sends HTTP requests to the REST API. The API processes requests related to Tasks and Users and communicates with the database.
+
+The Tasks Service manages task-related operations, while the Users Service manages user-related operations.
 
 This API Contract defines the initial structure of the project.

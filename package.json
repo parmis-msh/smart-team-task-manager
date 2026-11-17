@@ -1,0 +1,9 @@
+{
+  "name": "smart-team-task-manager",
+  "version": "1.0.0",
+  "description": "Backend for Smart Team Task Manager",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

@@ -12,7 +12,9 @@ const server = http.createServer((req, res) => {
                 { id: 2, title: 'Complete project', completed: true }
             ]
         }));
-    } else if (req.url === '/api/users') {
+    } 
+    
+    else if (req.url === '/api/users') {
         res.writeHead(200);
         res.end(JSON.stringify({
             message: 'Users retrieved successfully',
@@ -20,14 +22,18 @@ const server = http.createServer((req, res) => {
                 { id: 1, name: 'Parmis' }
             ]
         }));
-    } else {
+    } 
+    
+    else {
         res.writeHead(404);
-        res.end(JSON.stringify({ message: 'Not Found' }));
+        res.end(JSON.stringify({
+            message: 'Not Found'
+        }));
     }
 });
 
 const PORT = 3000;
 
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running on port ${PORT}`);
 });
